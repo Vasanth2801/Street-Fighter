@@ -17,6 +17,11 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         health.SetHealth(currentHealth);
     }
 
