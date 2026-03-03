@@ -150,6 +150,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 849208099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &421305463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421305464}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &421305464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421305463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.81, y: -0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 849208099}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +469,7 @@ Transform:
   m_Children:
   - {fileID: 2124453949}
   - {fileID: 304653746}
+  - {fileID: 421305464}
   m_Father: {fileID: 1125959288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &849208100
@@ -525,6 +557,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
+  attackPoint: {fileID: 421305464}
+  attackRange: 2
+  attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   rb: {fileID: 849208101}
   animator: {fileID: 2124453951}
   moveInput: 0

@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool isGrounded;
 
+    [Header("Attack Settings")]
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private LayerMask attackLayerMask;
+
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
@@ -61,21 +66,25 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.K))
         {
             Attack();
+            MainAttack();
         }
 
         if(Input.GetKeyDown(KeyCode.J))
         {
             FlyAttack();
+            MainAttack();
         }
 
         if(Input.GetKeyDown(KeyCode.L))
         {
             DiveAttack();
+            MainAttack();
         }
 
         if(Input.GetKeyDown(KeyCode.I))
         {
             Kick();
+            MainAttack();
         }
     }
 
@@ -112,5 +121,15 @@ public class Player : MonoBehaviour
     void Kick()
     {
         animator.SetTrigger("Kick");
+    }
+
+    void MainAttack()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, attackLayerMask);
+
+        foreach(Collider2D hit in hitEnemies)
+        {
+            Debug.Log("Enemy Hit");
+        }
     }
 }
