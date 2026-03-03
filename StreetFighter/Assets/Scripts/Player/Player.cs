@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
 
     [Header("Inputs")]
     [SerializeField] private float moveInput;
@@ -29,6 +30,10 @@ public class Player : MonoBehaviour
         }
 
         Jump();
+
+        AllAttacks();
+        
+        HandleAnimations();
     }
 
     void FixedUpdate()
@@ -51,9 +56,61 @@ public class Player : MonoBehaviour
         }
     }
 
+    void AllAttacks()
+    {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            Attack();
+        }
+
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            FlyAttack();
+        }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            DiveAttack();
+        }
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            Kick();
+        }
+    }
+
     void Flip()
     {
         facingDirection *= -1;
         transform.localScale = new Vector3(transform.localScale.x * -1,transform.localScale.y,transform.localScale.z);
+    }
+
+    void HandleAnimations()
+    {
+        bool isMoving = Mathf.Abs(moveInput) > 0 && isGrounded;
+
+        animator.SetBool("isIdling", !isMoving && isGrounded);
+        animator.SetBool("isRunning", isMoving && isGrounded);
+        animator.SetBool("isJumping",rb.linearVelocity.y > 0);
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+    }
+
+    void FlyAttack()
+    {
+        animator.SetTrigger("FlyKick");
+    }
+
+    void DiveAttack()
+    {
+        animator.SetTrigger("DiveKick");
+    }
+
+    void Kick()
+    {
+        animator.SetTrigger("Kick");
     }
 }
