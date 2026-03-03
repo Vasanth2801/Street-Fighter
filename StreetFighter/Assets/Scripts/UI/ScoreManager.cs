@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int score;
     public static ScoreManager instance;
 
-    private void Awake()
+    void Awake()
     {
         if(instance == null)
         {
@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score:  " + score.ToString();
     }
 
     public void AddScore(int amount)

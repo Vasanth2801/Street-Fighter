@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
+            UIManager.instance.GameOver();
         }
 
         health.SetHealth(currentHealth);
