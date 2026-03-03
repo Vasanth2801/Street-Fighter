@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -107,6 +106,7 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
+        animator.SetTrigger("Attack");
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,playerLayer);
         foreach(Collider2D hit in hitPlayer)
         {
@@ -114,6 +114,8 @@ public class Enemy : MonoBehaviour
             {
                 continue;
             }
+
+            Debug.Log("Attacking" + hit.name);
         }
     }
 

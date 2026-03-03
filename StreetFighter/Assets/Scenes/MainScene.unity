@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   speed: 5
-  jumpForce: 14
+  jumpForce: 15
   facingDirection: 1
   groundCheck: {fileID: 304653746}
   checkRadius: 1.3
@@ -784,7 +784,7 @@ MonoBehaviour:
   player: {fileID: 849208099}
   rb: {fileID: 1134972313}
   isChasing: 0
-  animator: {fileID: 0}
+  animator: {fileID: 2126650363}
   attackCoolDown: 2
   isAttacking: 0
 --- !u!58 &1134972315
@@ -1255,6 +1255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126650361}
   - component: {fileID: 2126650362}
+  - component: {fileID: 2126650363}
   m_Layer: 7
   m_Name: sprite
   m_TagString: Untagged
@@ -1335,6 +1336,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2126650363
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126650360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1efbc5bb5a1fc24a8f707d56b23ced6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

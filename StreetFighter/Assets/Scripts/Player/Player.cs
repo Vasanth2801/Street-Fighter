@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
 
         foreach(Collider2D hit in hitEnemies)
         {
-            Debug.Log("Enemy Hit");
+            Debug.Log("Enemy Hit" + hit.name);
         }
     }
 }
